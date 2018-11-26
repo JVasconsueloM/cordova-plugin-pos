@@ -1,0 +1,11 @@
+{
+  "name": "cordova-plugin-POS",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-plugin-POS",
+    "platforms": [
+      "android"
+    ]
+  },
+  "description": "Plantilla base para crear un Plugin personalizado"
+}

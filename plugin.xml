@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="cordova-plugin-POS"
+    version="1.0.0">
+    <name>Cordova Plugin POS</name>
+    <description></description>
+    <license>MIT</license>
+    <keywords></keywords>
+    
+    <!-- android -->
+    <platform name="android">
+      <js-module src="www/plugin.js" name="plugin">
+        <runs/>
+
+        <!-- Este es el nombre por el cual se accedera el plugin -->
+        <clobbers target="POSPlugin" />
+      </js-module>
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="POSPlugin">
+          <param name="android-package" value="pax.POSPlugin" />
+          <param name="onload" value="true" />
+        </feature>
+      </config-file>
+
+      <source-file src="src/android/pax/POSPlugin.java" target-dir="src/pax/" />
+      <lib-file src="src/android/libs/NeptuneLiteApi_V2.03.00_20180208.jar" />
+      <lib-file src="src/android/libs/PaxGL_V1.00.04_20170303.jar" />
+
+      <!-- <resource-file src="src/android/libs/armeabi/libimgprocessing.so" target="jniLibs/armeabi/libimgprocessing.so" /> -->
+
+      <!-- <lib-file src="src/android/libs/armeabi/libimgprocessing.so" /> -->
+      <source-file src="src/android/libs/armeabi/libimgprocessing.so" target-dir="libs/arm64-v8a/" />
+      <source-file src="src/android/libs/armeabi/libimgprocessing.so" target-dir="libs/armeabi-v7a" />
+      <source-file src="src/android/libs/armeabi/libimgprocessing.so" target-dir="libs/armeabi" />
+      <source-file src="src/android/libs/armeabi/libimgprocessing.so" target-dir="libs/x86/" />
+      <source-file src="src/android/libs/armeabi/libimgprocessing.so" target-dir="libs/x86_64/" />
+    </platform>
+</plugin>
