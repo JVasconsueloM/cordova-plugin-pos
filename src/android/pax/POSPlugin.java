@@ -112,15 +112,15 @@ public class POSPlugin extends CordovaPlugin {
 
             Context context = this.cordova.getActivity().getApplicationContext();
 
-            Log.i(TAG,"GETTING IDAL/IGL/ISYS/PRINTER");
+            // Log.i(TAG,"GETTING IDAL/IGL/ISYS/PRINTER");
             getIDAL(context);
             getIGL(context);
             getISys();
             getPrinter();
 
-            Log.i(TAG,"GETTING STATUS");
+            // Log.i(TAG,"GETTING STATUS");
             String status = getStatus();
-            Log.i(TAG, status);
+            // Log.i(TAG, status);
             if(isStatusPrinterAction){ 
                 returnSuccessMessage(callbackContext, status);
                 return true;
@@ -132,14 +132,14 @@ public class POSPlugin extends CordovaPlugin {
             return true;
 
         } catch (Exception e) {
-            Log.e(TAG,"Error General: ", e);
+            // Log.e(TAG,"Error General: ", e);
             returnErrorMessage(callbackContext, e.getMessage());
             return false;
         }
     }
 
     public void returnSuccessMessage(CallbackContext callbackContext, String message){
-        beepOk();
+        // beepOk();
         callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, message));
     }
 
